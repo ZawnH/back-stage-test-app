@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: Test App Backend API
+  version: 1.0.0
+  description: API for the simple test application backend.
+servers:
+  - url: http://127.0.0.1:7007
+    description: Local development server
+paths:
+  /:
+    get:
+      summary: Get a hello message
+      description: Returns a simple hello message from the backend.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello from the Test App Backend! 

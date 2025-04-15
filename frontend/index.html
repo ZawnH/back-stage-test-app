@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test App Frontend</title>
+</head>
+<body>
+    <h1>Welcome to the Test App Frontend!</h1>
+    <p>Message from backend: <span id="backend-message">Loading...</span></p>
+
+    <script>
+        fetch('http://127.0.0.1:7007') // Fetch from the backend URL
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('backend-message').textContent = data.message;
+            })
+            .catch(error => {
+                console.error('Error fetching from backend:', error);
+                document.getElementById('backend-message').textContent = 'Error loading data';
+            });
+    </script>
+</body>
+</html> 
